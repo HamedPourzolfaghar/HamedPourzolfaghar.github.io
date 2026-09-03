@@ -388,3 +388,170 @@ footer {
     padding: 20px 0;
   }
 }
+/* =========================================================
+   DFT PORTFOLIO — FEATURED PROJECT CARD
+   ========================================================= */
+
+.dft-feature-card {
+  overflow: hidden;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.dft-feature-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 22px 48px rgba(24, 57, 70, 0.14);
+  border-color: rgba(13, 100, 112, 0.28);
+}
+
+/* Image */
+
+.project-image-link {
+  display: block;
+}
+
+.project-image-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: #eef4f8;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition:
+    transform 0.55s ease,
+    filter 0.55s ease;
+}
+
+.dft-feature-card:hover .project-image {
+  transform: scale(1.045);
+  filter: brightness(0.88);
+}
+
+/* Overlay */
+
+.project-image-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    180deg,
+    rgba(6, 28, 36, 0.02),
+    rgba(6, 28, 36, 0.68)
+  );
+
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.project-image-overlay span {
+  color: white;
+  font-weight: 800;
+  font-size: 1rem;
+
+  padding: 10px 17px;
+  border: 1px solid rgba(255,255,255,0.55);
+  border-radius: 999px;
+
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(6px);
+
+  transform: translateY(12px);
+  transition: transform 0.35s ease;
+}
+
+.dft-feature-card:hover .project-image-overlay {
+  opacity: 1;
+}
+
+.dft-feature-card:hover .project-image-overlay span {
+  transform: translateY(0);
+}
+
+/* Project number */
+
+.project-number-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+
+  padding: 7px 11px;
+
+  border-radius: 999px;
+
+  background: rgba(8, 43, 53, 0.90);
+  color: white;
+
+  font-size: 0.70rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+
+  backdrop-filter: blur(6px);
+}
+
+/* Tags */
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 17px 0;
+}
+
+/* Scientific highlight */
+
+.project-highlight {
+  margin: 18px 0;
+
+  padding: 11px 14px;
+
+  border-left: 3px solid var(--accent);
+
+  background: #eef6f7;
+
+  color: #35505b;
+
+  font-size: 0.90rem;
+
+  border-radius: 0 9px 9px 0;
+}
+
+.project-highlight strong {
+  color: var(--accent);
+}
+
+/* View project */
+
+.project-view-link {
+  display: inline-block;
+  margin-top: 4px;
+  transition: transform 0.25s ease;
+}
+
+.project-view-link:hover {
+  transform: translateX(5px);
+}
+
+
+/* Mobile */
+
+@media (max-width: 650px) {
+
+  .dft-feature-card:hover {
+    transform: none;
+  }
+
+  .project-image-overlay {
+    display: none;
+  }
+
+}
